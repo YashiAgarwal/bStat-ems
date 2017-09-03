@@ -1,5 +1,8 @@
 package bStat.ems.com.common.models.tables;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,13 +10,14 @@ import java.util.Date;
  * Created by Yashi Agarwal on 24-05-2017.
  */
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "wage_rates")
 public class WageRates {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private String id;
 
     @Column(name = "id_type")
     private String idType;
@@ -30,63 +34,4 @@ public class WageRates {
     @Column(name = "updated_on")
     private Date updatedOn;
 
-    public WageRates() {
-    }
-
-    public WageRates(long id, String idType, int ratePerUnit, String comments, Date createdOn, Date updatedOn) {
-        this.id = id;
-        this.idType = idType;
-        this.ratePerUnit = ratePerUnit;
-        this.comments = comments;
-        this.createdOn = createdOn;
-        this.updatedOn = updatedOn;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getIdType() {
-        return idType;
-    }
-
-    public void setIdType(String idType) {
-        this.idType = idType;
-    }
-
-    public int getRatePerUnit() {
-        return ratePerUnit;
-    }
-
-    public void setRatePerUnit(int ratePerUnit) {
-        this.ratePerUnit = ratePerUnit;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public Date getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Date createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Date getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(Date updatedOn) {
-        this.updatedOn = updatedOn;
-    }
 }
